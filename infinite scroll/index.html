@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Infinite Scroll</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+
+        <style>
+            .load-more-container {
+                margin-top: 15px;
+            }
+
+            .card {
+                margin-bottom: 15px;
+            }
+        </style>
+        
+    </head>
+
+    <body>
+
+        <div id="vapp">
+            <div class="container">
+                <div class="row mt-5">
+                    <div class="col-12 mt-3">
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">Album ID</th>
+                                    <th scope="col">ID</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="image" v-bind:key="photo.id" v-for="photo in photos">
+                                    <td>{{photo.albumId}}</td>
+                                    <td>{{photo.id}}</td>
+                                    <td>{{photo.title}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 load-more-container">
+                        <button class="btn btn-primary btn-block load-more">Load More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/popper.min.js"></script>
+        <script src="./js/bootstrap.min.js"></script>
+        <script src="./js/vue.js"></script>
+        <script src="./js/axios.min.js"></script>
+        <script src="./main.js"></script>
+        
+    </body>
+
+</html>
